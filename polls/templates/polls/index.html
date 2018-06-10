@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><title>Welcome to polls</title>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+ <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+ <style>
+ li.dropdown:hover > .dropdown-menu {
+    display: block;
+}
+body, html {
+    height: 100%;
+    margin: 0;
+}
+
+.bg {
+    
+    background-image: url("https://images.pexels.com/photos/122458/pexels-photo-122458.jpeg?auto=compress&cs=tinysrgb&h=350");
+
+   
+    height: 100%; 
+
+    
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+</style>
+</head>
+<body>
+<nav class="navbar navbar-inverse navbar-fixed-top" style="background-image: url('https://images.pexels.com/photos/235985/pexels-photo-235985.jpeg')">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="{% url 'polls:index' %}" style="margin-left:70px ;font-size:20px"><span class="glyphicon glyphicon-home" > <b>Home</b></span></a>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav" style="padding-left:50px; font-family: 'Times New Roman' ;font-size:20px">
+                <li class="dropdown active"><a class="dropdown-toggle" data-toggle="dropdown" href="{% url 'polls:index' %}">Categories <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="{% url 'polls:category_science' %}">Science</a></li>
+          <li><a href="{% url 'polls:category_lifestyle' %}">Lifestyle</a></li>
+          <li><a href="{% url 'polls:category_opinion' %}">Opinion</a></li>
+		  <li><a href="{% url 'polls:category_general' %}">General</a></li>
+        </ul>
+      </li>
+               <li><a href="{% url 'polls:question_list' %}">Question List</a></li>
+                <li><a href="{% url 'polls:latest_questions' %}">Latest Questions</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<br><br><div class="bg">
+<div class= "container" style="width: 80%;color: #1a242f;padding-top:80px">
+<h1 style=" text-align: center;font-family: verdana"><b>Select the category</b></h1><br>
+{% if category_list %}
+	<div class="list-group">
+    <a href="{% url 'polls:category_science'%}" class="list-group-item list-group-item-success"><h3>Science Category</h3></a>
+	<a href="{% url 'polls:category_lifestyle'%}" class="list-group-item"><h3>Lifestyle Category</h3></a>
+	<a href="{% url 'polls:category_opinion'%}" class="list-group-item list-group-item-success"><h3>Opinion Category</h3></a>
+	<a href="{% url 'polls:category_general'%}" class="list-group-item"><h3>General Category</h3></a> 
+	</div>
+{% else %}
+    <p>No Categories are available.</p>
+{% endif %}</div></div>
+</body>
+</html>
