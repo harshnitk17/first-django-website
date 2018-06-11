@@ -7,9 +7,7 @@
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
  <style>
- li.dropdown:hover > .dropdown-menu {
-    display: block;
-}
+
 body, html {
     height: 100%;
     margin: 0;
@@ -30,6 +28,17 @@ body, html {
 .list-group a:hover {
 background-color:#CCB2AD;}
 </style>
+<script> 
+$(document).ready(function(){
+    $(".dropdown-toggle").click(function(){
+        $(".dropdown-menu").slideToggle("slow");
+    });
+	$(".dropdown-menu").mouseleave(function(){
+        $(".dropdown-menu").slideToggle("slow");
+    });
+	
+});
+</script>
 </head>
 <body>
 <nav class="navbar navbar-inverse navbar-fixed-top" style="background-image: url('https://images.pexels.com/photos/235985/pexels-photo-235985.jpeg')">
