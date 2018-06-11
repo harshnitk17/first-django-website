@@ -78,6 +78,6 @@ $(document).ready(function(){
 {% else %}
     <p>No questions under this category are currently available .</p>
 {% endif %}
-<button type="button" class="btn btn-success"><a href="{% url 'polls:index' %}" style="color:black"> Back to the Category selection page</a></button></div>
+<a href="{% url 'polls:index' %}" ><button type="button" class="btn btn-success" style="color:black"> Back to the Category selection page</button></a></div>
 </body>
 </html>

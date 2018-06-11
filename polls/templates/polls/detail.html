@@ -83,17 +83,17 @@ $(document).ready(function(){
 <button type="button submit" class="btn btn-success" >Vote</button>
 </form></div></div></div>
 {% if question.category_id is 1 %}
-<button type="button " class="btn btn-success" ><a href="{% url 'polls:category_science' %}" style="color:black">Go back to the questions page</a></button>
-<button type="button" class="btn btn-success"><a href="{% url 'polls:index' %}" style="color:black"> Back to the Category selection page</a></button>
+<a href="{% url 'polls:category_science' %}" ><button type="button " class="btn btn-success" style="color:black" >Go back to the questions page</button></a>
+<a href="{% url 'polls:index' %}" ><button type="button" class="btn btn-success" style="color:black"> Back to the Category selection page</button></a>
 {% elif question.category_id is 2 %}
-<button type="button " class="btn btn-success" ><a href="{% url 'polls:category_lifestyle' %}" style="color:black">Go back to the questions page</a></button>
-<button type="button" class="btn btn-success"><a href="{% url 'polls:index' %}" style="color:black"> Back to the Category selection page</a></button>
+<a href="{% url 'polls:category_lifestyle' %}" ><button type="button " class="btn btn-success" style="color:black" >Go back to the questions page</button></a>
+<a href="{% url 'polls:index' %}" ><button type="button" class="btn btn-success" style="color:black"> Back to the Category selection page</button></a>
 {% elif question.category_id is 3 %}
-<button type="button " class="btn btn-success" ><a href="{% url 'polls:category_opinion' %}" style="color:black">Go back to the questions page</a></button>
-<button type="button" class="btn btn-success"><a href="{% url 'polls:index' %}" style="color:black"> Back to the Category selection page</a></button>
+<a href="{% url 'polls:category_opinion' %}" ><button type="button " class="btn btn-success" style="color:black" >Go back to the questions page</button></a>
+<a href="{% url 'polls:index' %}" ><button type="button" class="btn btn-success" style="color:black"> Back to the Category selection page</button></a>
 {% elif question.category_id is 4 %}
-<button type="button " class="btn btn-success" ><a href="{% url 'polls:category_general' %}" style="color:black">Go back to the questions page</a></button>
-<button type="button" class="btn btn-success"><a href="{% url 'polls:index' %}" style="color:black"> Back to the Category selection page</a></button>
+<a href="{% url 'polls:category_general' %}" ><button type="button " class="btn btn-success" style="color:black" >Go back to the questions page</button></a>
+<a href="{% url 'polls:index' %}" ><button type="button" class="btn btn-success" style="color:black"> Back to the Category selection page</button></a>
 {% endif %}
 </div>
 </div></body></html>
